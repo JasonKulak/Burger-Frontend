@@ -1,5 +1,15 @@
+import { Link } from "react-router-dom"
 
+export default function Burger({ burger }) {
 
-export default function Burger(props) {
-    return <h1>Burger {props.name}</h1>
+    const id = burger.url.split("/")[4]
+    console.log(id)
+
+    return (
+        <div>
+            <Link to={`/burgers/${id}`}>
+                <h1>{burger.nameOfBurger}</h1>
+            </Link>
+        </div>
+    )
 }

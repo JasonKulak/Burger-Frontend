@@ -1,20 +1,45 @@
-
+import Burger from "../components/Burger"
+import { Form, useLoaderData } from "react-router-dom"
 
 export default function Index(props) {
-    // const allBurgers = useLoaderData()
+    const allBurgers = useLoaderData()
 
     return (
         <>
-            <h1>Add a Burger</h1>
-            {/* <Form action="/create" method="post">
-                <label htmlFor="name">
-                    <input type="text" name="name" id="name" />
+            <h1>Add A Burger</h1>
+            <Form action="/create" method="post">
+                <label htmlFor="nameOfBurger">
+                    <input type="text" name="nameOfBurger" id="nameOfBurger" />
                 </label>
-                <label htmlFor="ingredient 1">
-                    <input type="text" name="ingredient 1" id="ingredient 1" />
+                <label htmlFor="ingredientOne">
+                    <input type="text" name="ingredientOne" id="ingredientOne" />
+                </label>
+                <label htmlFor="ingredientTwo">
+                    <input type="text" name="ingredientTwo" id="ingredientTwo" />
+                </label>
+                <label htmlFor="ingredientThree">
+                    <input type="text" name="ingredientThree" id="ingredientThree" />
+                </label>
+                <label htmlFor="ingredientFour">
+                    <input type="text" name="ingredientFour" id="ingredientFour" />
+                </label>
+                <label htmlFor="ingredientFive">
+                    <input type="text" name="ingredientFive" id="ingredientFive" />
+                </label>
+                <label htmlFor="ingredientSix">
+                    <input type="text" name="ingredientSix" id="ingredientSix" />
+                </label>
+                <label htmlFor="ingredientSeven">
+                    <input type="text" name="ingredientSeven" id="ingredientSeven" />
+                </label>
+                <label htmlFor="haveEaten">
+                    <input type="boolean" name="haveEaten" id="haveEaten" data-enable-time />
                 </label>
                 <button>Add New Burger</button>
-            </Form> */}
+            </Form>
+
+            <hr />
+            {allBurgers.map((burger, i) => <Burger burger={burger} key={i}/>)}
         </>
     )
 }
