@@ -40,8 +40,8 @@ export const updateAction = async ({request, params}) => {
     const id = params.id
     //construct the request body
     const updatedBurger = {
-        nameOfBurger: formData.get("Burger name"),
-        ingredientOne: formData.get("ingredient"),
+        nameOfBurger: formData.get("nameOfBurger"),
+        ingredientOne: formData.get("ingredientOne"),
         ingredientTwo: formData.get("ingredientTwo"),
         ingredientThree: formData.get("ingredientThree"),
         ingredientFour: formData.get("ingredientFour"),
