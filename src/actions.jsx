@@ -32,27 +32,44 @@ export const createAction = async ({request}) => {
     return redirect("/")
 }
 
-// export const updateAction = async ({request, params}) => {
-//     const formData = await request.formData()
-//     const id = params.id
-//     const updateBurger = {
-//         nameOfBurger: formData.get("Burger name"),
-//         ingredientOne: formData.get("ingredient")
-//     }
-//     await fetch(`${URL}${id}/`, {
-//         method: "PUT",
-//         headers: {
-//             "Content-Type": "application/json" 
-//         },
-//         body: JSON.stringify(updatedBurger)
-//     }) 
-//     return redirect(`/burgers/${id}`)
-// }
+//Update Action
+export const updateAction = async ({request, params}) => {
+    //get the form data
+    const formData = await request.formData()
+    //get the burger id
+    const id = params.id
+    //construct the request body
+    const updatedBurger = {
+        nameOfBurger: formData.get("Burger name"),
+        ingredientOne: formData.get("ingredient"),
+        ingredientTwo: formData.get("ingredientTwo"),
+        ingredientThree: formData.get("ingredientThree"),
+        ingredientFour: formData.get("ingredientFour"),
+        ingredientFive: formData.get("ingredientFive"),
+        ingredientSix: formData.get("ingredientSix"),
+        ingredientSeven: formData.get("ingredientSeven"),
+        haveEaten: formData.get("haveEaten")
+    }
+    //send the request body to the backend
+    await fetch(`${URL}${id}/`, {
+        method: "PUT",
+        headers: {
+            "Content-Type": "application/json" 
+        },
+        body: JSON.stringify(updatedBurger)
+    }) 
+    //redirect to the show page
+    return redirect(`/burgers/${id}`)
+}
 
-// export const deleteAction = async ({params}) => {
-//     const id = params.id 
-//     await fetch(`${URL}${id}/`, {
-//         method: "DELETE"  
-//     })
-//     return redirect("/")
-// }
+//Delete Action
+export const deleteAction = async ({params}) => {
+    //get the burger id
+    const id = params.id 
+    //send the request to the backend
+    await fetch(`${URL}${id}/`, {
+        method: "DELETE"  
+    })
+    //redirect to the index page
+    return redirect("/")
+}
