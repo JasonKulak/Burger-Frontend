@@ -7,6 +7,16 @@
 
 - **Github URL: https://github.com/JasonKulak/Burger-Frontend**
 
+- **Mini-Project4**
+    - **Deployed Website: https://main--buildaburgerproject.netlify.app/**
+
+## Dependencies -
+- React
+- React-Router-Dom
+- React-Dom
+- Milligram
+
+
 # Trello Board Link - https://trello.com/b/EBCNXVha/build-a-burger
 
 ## Design Mockups (Desktop + Mobile)
